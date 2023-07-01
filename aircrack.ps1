@@ -58,13 +58,13 @@ $handshakeList = Get-ChildItem -Path $handshakeList_directory -File
 $hsFile = getFile($handshakeList)
 Write-Host "│   │   ├── " -NoNewLine
 Write-Host "You have Selected (Handshake): $hsFile"
-Write-Host "├── sudo aircrack-ng -w $dictFile $hsFile" -ForegroundColor White
-$choose = Read-Host "├── Crack WPA/WPA2 WiFi Handshake Now (y/n) : "
+Write-Host "├── sudo aircrack-ng -w $dictFile $hsFile" -ForegroundColor White 
+$choose = Read-Host "├── Crack WPA/WPA2 WiFi Handshake Now (y/n) : " 
 
 if($choose -eq 'y')
 {
     Write-Host "│   ├── Cracking Handshake using " -NoNewline
-    Write-Host "aircrack-ng" -ForegroundColor Black -BackgroundColor Green
+    Write-Host "aircrack-ng" -ForegroundColor White
     sudo aircrack-ng -w $dictFile $hsFile
 
 } else {  Write-Host "└──[ Quiting Now ] "}

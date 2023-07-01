@@ -1,6 +1,7 @@
    .               .    
- .´  ·  .     .  ·  `.  aircrack-ps1 1.0.0
- :  :  :  (¯)  :  :  :  Aa wifi cracking tool in powershell
- `.  ·  ` /¯\ ´  ·  .´  author : c1ph3rwolf
-   `     /¯¯¯\     ´    https://github.com/c1ph3rwolf/aircrack-ps1
+ .´  ·  .     .  ·  `.  aircrack-ps1 1.2.0
+ :  :  :  (¯)  :  :  :  A wifi cracking tool in powershell
+ `.  ·  ` /¯\ ´  ·  .´  created & maintained by : c1ph3rwolf
+   `     /¯¯¯\     ´    requirement             : aircrack-ng
+                        source-repository       : https://github.com/c1ph3rwolf/aircrack-ps1
 
