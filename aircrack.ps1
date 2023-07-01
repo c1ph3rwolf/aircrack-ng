@@ -2,9 +2,10 @@ $location = "/home/cipher/Documents/GitHub/aircrack-ps1"
 $aircrack_JSON = Get-Content -raw "$location/aircrack.json" | ConvertFrom-Json
 function getPath($title) { return "$location/$title"}
 
-function getFile($fileList ) {
+function getFile($fileList) {
+  
     if ($fileList.Count -gt 0) {
-        Write-Host "List of Files:"
+        Write-Host "List of Files : "
         $index = 0
         foreach ($file in $fileList) {
             $index++
@@ -29,10 +30,25 @@ function getFile($fileList ) {
     
 }
 
-$directory = $aircrack_JSON.directory.wordlist
+
+
 $ascii_file = getPath($aircrack_JSON.assets.ascii)
 cat $ascii_file
 
-$fileList = Get-ChildItem -Path $disrectory -File
-$filename = getFile($fileList)
-Write-Host "You have Selected : $filename"
+
+$wordList_directory = $aircrack_JSON.directory.wordlist
+$handshakeList_directory = $aircrack_JSON.directory.handshake
+
+# 1. Select Wordlist from /usr/share/wordlists
+Write-Host "[ 1 ] Select WorldLists from : $wordList_directory"
+$wordList = Get-ChildItem -Path $wordList_directory -File
+$dictFile = getFile($wordList)
+Write-Host "You have Selected (WordList): $dictFile"
+
+# 2. Select Handshake from /home/cipher/hs
+Write-Host "[ 2 ] Select WorldLists from : $handshakeList_directory"
+$handshakeList = Get-ChildItem -Path $handshakeList_directory -File
+$hsFile = getFile($handshakeList)
+Write-Host "You have Selected (Handshake): $hsFile"
+
+
